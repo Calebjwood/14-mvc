@@ -11,13 +11,10 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     date_created: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     posted_by: {
       type: DataTypes.STRING,
@@ -28,7 +25,7 @@ Post.init(
       allowNull: false,
     },
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",

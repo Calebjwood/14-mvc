@@ -28,6 +28,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/user", async (req, res) => {
+  try {
+      const userData = User.findAll({
+        model: Post
+      })
+
+
+      res.status(200).json(userData)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = Post.findByPk(req.params.id, {

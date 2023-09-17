@@ -12,8 +12,9 @@ Comments.init(
       primaryKey: true,
     },
     date_posted: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     comment_text: {
       type: DataTypes.STRING,
@@ -24,7 +25,7 @@ Comments.init(
       allowNull: false,
     },
     post_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: "post",
         key: "id",

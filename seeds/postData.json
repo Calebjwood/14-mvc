@@ -1,0 +1,20 @@
+[
+  {
+    "name": "What up with this",
+    "posted_by": "caleb",
+    "post_text": "im really not sure whats up with this",
+    "user_id": 1
+  },
+  {
+    "name": "why does this work",
+    "posted_by": "tom",
+    "post_text": "im really not sure why this works",
+    "user_id": 2
+  },
+  {
+    "name": "who is that again",
+    "posted_by": "bob",
+    "post_text": "I really cant remember who that is again",
+    "user_id": 3
+  }
+]

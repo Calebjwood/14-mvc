@@ -1,0 +1,10 @@
+{{#each posts as |post|}}
+  <div class="col-8 post-border mt-5 ">
+    <div class="row post-border bg-dark-red">
+      <h2 class="col-6 text-start text-gray">{{ post.name }}</h2>
+      <h4 class="col-6 text-end text-gray">Posted by {{ post.posted_by }} on {{ post.date_created }}</h4>
+    </div>
+    <div>
+      <p class="fs-4">{{ post.post_text }}</p>
+    </div>
+  </div>

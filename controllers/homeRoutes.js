@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const Post = require("../models/Post");
-const User = require("../models/User");
+const {User, Post, Comments} = require('../models')
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -13,7 +12,7 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-
+    console.log(postData);
     res.status(200).json(postData);
 
     //UNCOMMENT WHEN FRONT END IS READY
@@ -30,11 +29,11 @@ router.get("/", async (req, res) => {
 
 router.get("/user", async (req, res) => {
   try {
-      const userData = User.findAll({
-        model: Post
+      const userData = await User.findAll({
+        include: [{model: Post}]
       })
 
-
+      console.log(userData);
       res.status(200).json(userData)
   } catch (err) {
     res.status(500).json(err);
@@ -43,7 +42,7 @@ router.get("/user", async (req, res) => {
 
 router.get("/post/:id", async (req, res) => {
   try {
-    const postData = Post.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,

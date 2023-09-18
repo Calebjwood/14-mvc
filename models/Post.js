@@ -16,6 +16,10 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: null
+    },
     posted_by: {
       type: DataTypes.STRING,
       allowNull: false,

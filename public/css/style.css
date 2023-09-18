@@ -1,0 +1,26 @@
+.nav-buttons {
+    text-decoration: none;
+}
+
+.bg-dark-red {
+   background-color: #231010
+}
+.dark-red {
+    color: #231010
+}
+.gross-green {
+    color: #D9EAD3;
+}
+
+.bg-gross-green {
+    background-color: #D9EAD3;
+}
+
+.text-gray {
+    color: #A6A6A7;
+}
+
+.post-border {
+    border-style: solid ;
+    border-color: #231010;
+}

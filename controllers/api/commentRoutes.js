@@ -4,7 +4,11 @@ const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
   try {
-    comData = await Comments.create(req.body);
+    const comData = await Comments.create({
+      comment_text: req.body.commentText,
+      posted_by: req.session.name,
+      post_id: req.session.post_id,
+    });
 
     res.status(201).json(comData);
   } catch (err) {
@@ -14,7 +18,7 @@ router.post("/", withAuth, async (req, res) => {
 
 router.delete("/:id", withAuth, async (req, res) => {
   try {
-    const comData = Comments.describe({
+    const comData = Comments.destroy({
       where: {
         id: req.params.id,
       },

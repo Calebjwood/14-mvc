@@ -17,18 +17,14 @@
         <nav class="row pb-3">
           <a
             class="gross-green nav-buttons col-1 fs-4"
-            href="/homepage"
+            href="/"
           >Home</a>
           <a
             class="gross-green nav-buttons col-1 fs-4"
             href="/dashboard"
           >Dashboard</a>
           {{#if logged_in}}
-            <a
-              id="logout"
-              class="gross-green nav-buttons fs-4 col-1"
-              href=""
-            >logout</a>
+            <button class="no-button gross-green nav-buttons fs-4 col-1" id="logout">logout</button>
           {{else}}
             <a
               class="gross-green nav-buttons fs-4 col-1"
@@ -46,7 +42,8 @@
       <footer class="row justify-content-center pt-5">  
         {{#if logged_in}}
         <div class="col-1 post-border text-center bg-dark-red">
-        <a class=" fs-4 text-gray nav-buttons" href="/new-post">+New Post</a>
+        <a class=" fs-4 text-gray nav-buttons" href="/newPost">+New Post</a>
+        </div>
         {{/if}}
       </footer>
     </div>

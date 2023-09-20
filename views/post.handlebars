@@ -1,7 +1,7 @@
   <div class="col-8 post-border mt-5 ">
     <div class="row post-border bg-dark-red">
       <h2 class="col-6 text-start text-gray">{{ name }}</h2>
-      <h4 class="col-6 text-end text-gray">Posted by {{ posted_by }} on {{ date_created }}</h4>
+      <h4 class="col-6 text-end text-gray">Posted by {{ posted_by }} on {{ format_date date_created }}</h4>
     </div>
     <div>
       <p class="fs-4">{{ post_text }}</p>
@@ -11,16 +11,17 @@
   {{#each comments as |comment|}}
     <div class="col-8 post-border mt-5 fs-5">
           <p class="dark-red">{{ comment.comment_text }}</p>
-          <p>by {{ comment.user_name }} on {{ comment.date_posted }}</p>
+          <p>by {{ comment.user_name }} on {{ format_date comment.date_posted }}</p>
     </div>
-  {{#each}}
+    {{/each}}
   <div class="col-8 post-border mt-5 fs-5">
           <form id="new-comment" class="row justify-content-center">
             <div class="pb-3">
               <label for="new-comment-text" class="form-control bg-gross-green dark-red fs-4">comment</label>
               <input type="text" class="form-control" id="new-comment-text">
             </div>
-            <button type="submit" id="new-comment-btn" class=" col-2  btn btn-primary">submit</button>
+            <button type="submit" id="newCommentBtn" class=" col-2 btn btn-primary">submit</button>
           </form>
     </div>
-
+  
+<script src="./js/comPost.js"></script>

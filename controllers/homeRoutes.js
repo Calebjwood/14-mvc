@@ -70,6 +70,22 @@ router.get("/newPost", withAuth, (req, res) => {
   res.render('newPost')
 })
 
+router.get('/editPost/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id)
+
+    const post = postData.get({plain: true})
+ 
+
+  res.render('editPost', {
+    post,
+    logged_in: true
+  })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/dashboard');

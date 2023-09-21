@@ -1,0 +1,37 @@
+<div class="col-8 post-border mt-5">
+  <div class="row post-border bg-dark-red">
+    <h2 class="col-6 text-start text-gray">New Post</h2>
+  </div>
+  <div>
+    <h6 class="d-none" id="postId">{{post.id}}</h6>
+    <form id="edit-form" class="row">
+      <div>
+        <label
+          for="post-name"
+          class="form-control bg-gross-green dark-red fs-4"
+        >Title</label>
+        <input type="text" class="form-control" id="post-name" />
+      </div>
+      <div class="pb-3">
+        <label
+          for="post-text"
+          class="form-control bg-gross-green dark-red fs-4"
+        >content</label>
+        <input type="text" class="form-control" id="post-text" />
+      </div>
+      <button
+        id="updateBtn"
+        type="submit"
+        class="btn btn-primary"
+      >Update</button>
+        <button
+        id="deleteBtn"
+        type="submit"
+        class="btn btn-primary"
+      >Delete</button>
+    </form>
+  </div>
+</div>
+
+
+<script src="./js/editPost.js"></script>

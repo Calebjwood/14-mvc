@@ -1,11 +1,12 @@
-const postId = document.getElementById('postId').value
 const updateBtn = document.getElementById('updateBtn')
 const deleteBtn = document.getElementById('deleteBtn')
+
+const postId = document.getElementById('postId').textContent
 
 
 const updateFormHandler = async (event) => {
     event.preventDefault()
-
+    console.log(postId);
     const title = document.querySelector('#post-name').value.trim()
     const postText = document.querySelector('#post-text').value.trim() 
 

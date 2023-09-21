@@ -74,8 +74,10 @@ router.get('/editPost/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id)
 
+    req.session.save(() => {
+      req.session.post_id = postData.id
+    })
     const post = postData.get({plain: true})
- 
 
   res.render('editPost', {
     post,

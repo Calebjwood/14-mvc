@@ -21,14 +21,15 @@ router.put("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.update(
       {
+        name: req.body.title,
+        post_text: req.body.postText,
+      },
+      {
         where: {
           id: req.params.id,
         },
       },
-      {
-        name: req.body.title,
-        post_text: req.body.postText,
-      }
+      
     );
 
     res.status(201).json(postData)
@@ -42,7 +43,6 @@ router.delete("/:id", withAuth, async (req, res) => {
     const postData = await Post.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
